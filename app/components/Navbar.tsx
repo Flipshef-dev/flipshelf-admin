@@ -1,34 +1,35 @@
-"use client"
+"use client";
 import Link from 'next/link';
-import { useState } from 'react';
+import React from 'react';
+ import { useTheme } from 'next-themes'; 
+    import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
- export const Navbar = () => {
- const [isOpen, setIsOpen] = useState(false);  
+const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-  <nav className='bg-gray-800 text-white p-4 sm:p-6 md:justify-between md:items-center'>  
+  <nav className='bg-gray-800 text-white p-4 sm:p-6 md:justify-between md:items-center' suppressHydrationWarning>  
     <div className = "container mx-auto flex justify-between items-center">
-    <a href=""className='text-xl font-bold cursor-pointer'> <FontAwesomeIcon icon={faHouse} /> </a>
-
-    <div className='hidden md:flex'>
-      <Link href="/" className='mx-2 hover:text-gray-400'> Home </Link>
-      <Link href="/about" className='mx-2 hover:text-gray-400'> About </Link>
-      <Link href="/contact" className='mx-2 hover:text-gray-400'> Contact </Link> 
-    </div>
-
-<div className='md:hidden flex items-center'>
-  <button onClick={() =>{
-    setIsOpen(!isOpen);
-    }}>
-  </button>
-</div>
-
-
+    <a href=""className='text-xl font-bold cursor-pointer'> Dashboard </a>
+    <input type="text" placeholder="Search here" className='w-64 pl-10 pr-4 py-2  bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-[44px] ' />
+  
+    <button
+        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        className="p-2 rounded bg-gray-200 dark:bg-gray-700 cursor-pointer"
+      >
+        {theme === 'dark' ? <FaSun/> : <FaMoon/>}
+      </button>
 
     </div>
     </nav>
   );
  };
 
-export default Navbar;
+ export default Navbar;

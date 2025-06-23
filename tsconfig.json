@@ -15,7 +15,13 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
+        "colors": {
+          "dark": "#232A3C",
+          "medium": "#293245",
+        
+        },
+        "name": "next",
+        "darkMode": "class"
       }
     ],
     "paths": {
