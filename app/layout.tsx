@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from 'next/font/google';
-import Providers from "./providers";
+import { Providers } from "./providers"; // Fixed import - should match your export
 import "./globals.css";
 
 const poppins = Poppins({
@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
         <Providers>
