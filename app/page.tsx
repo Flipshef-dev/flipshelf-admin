@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "./components/Header/header";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Dashboard from "./components/Dashboard/page";
 
 export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -15,6 +16,8 @@ export default function Home() {
         `}
       >
         <Header isDark={isDark} setIsDark={setIsDark} />
+        <Dashboard />
+
       </div>
     </div>
   );

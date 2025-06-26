@@ -3,6 +3,7 @@ import React from "react";
 import { Search, Bell } from 'lucide-react';
 import ThemeToggle from "../ThemeToggle";
 
+
 const Header = ({isDark, setIsDark}) => {
     const toggleTheme = () => {
     setIsDark(!isDark);
