@@ -1,20 +1,19 @@
 'use client';
 import React from "react";
-import { Search, Bell } from 'lucide-react';
-import ThemeToggle from "../ThemeToggle";
+import { Search } from 'lucide-react';
 
+type HeaderProps = {
+    title: String
+}
 
-const Header = ({isDark, setIsDark}) => {
-    const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
+const Header: React.FC<HeaderProps> = ({title}) => {
     return (
         <header
             className="bg-neutral-50 dark:bg-neutral-900  border-0 text-black dark:text-white px-6 py-4"
         >
             <div className="flex justify-between items-center">
                 <div>
-                    <h1 className="text-3xl font-bold ">Dashboard</h1>
+                    <h1 className="text-3xl font-bold ">{title}</h1>
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="relative">
@@ -26,7 +25,6 @@ const Header = ({isDark, setIsDark}) => {
                         />
                     </div>
                 </div>
-                <ThemeToggle />
             </div>
         </header>
     )
