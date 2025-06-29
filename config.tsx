@@ -27,14 +27,14 @@ export const NavItems = () => {
       name: 'Books',
       href: '/books',
       icon: <BookOpen size={22} />,
-      active: isNavItemActive(pathname, '/profile'),
+      active: isNavItemActive(pathname, '/books'),
       position: 'top',
     },
     {
       name: 'Api',
       href: '/api',
       icon: <Server size={22} />,
-      active: isNavItemActive(pathname, '/notifications'),
+      active: isNavItemActive(pathname, '/api'),
       position: 'top',
     },
     {
