@@ -36,6 +36,25 @@ export default function Api() {
           <Button className='w-[10%] self-end' type='submit'>
             <span>Apply</span>
           </Button>
+
+          <hr />
+          {/* Available api endpoints */}
+          <div className="flex flex-col gap-2">
+            <div className="flex justify-center">
+              <p className="font-semibold text-neutral-800 dark:text-neutral-100">
+                Available API Endpoints
+              </p>
+            </div>
+            {/* Will add available enpoints in future 
+            not now cuz im tooooooo lazyyyyyyyyyyy
+
+            uhh i hate this
+            */}
+            <ul className="list-disc pl-6 text-neutral-700 dark:text-neutral-200">
+              <li>/api/test</li>
+              <li>More endpoints coming soon...</li>
+            </ul>
+          </div>
         </div>
       </main>
     </div>
