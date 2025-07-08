@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server"
 
 export async function GET() {
-    const res = await fetch("http://localhost:3000/api/test")
-    const test = await res.json()
-
-    return NextResponse.json(test)
+    return NextResponse.json({
+        message: "hello there",
+        description: "this is a test api",
+        author: "made by SAN DESH ",
+        info: "this should work though",
+    })
 }
